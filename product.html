@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Custom Singleton Object Creation</title>
+    <script>
+        var product ={
+            ID:"0001",
+            Name:"Macbook Pro 13",
+            Description:"13 inch Macbook Pro",
+            Price:"1499",
+            displayDetails:function(){
+                document.write(this.ID+"<br/>");
+                document.write(this.Name+"<br/>");
+                document.write(this.Description+"<br/>");
+                document.write(this.Price+"<br/>");
+                document.write(this.calculateDisc(30)+"<br/>");
+
+            },
+            calculateDisc:function(percentage){
+                var discount = this.Price-percentage*0.01*parseInt(this.Price);
+                console.log(discount);
+                return discount;
+            },
+        };
+        product.displayDetails();
+    </script>
+</head>
+<body>  
+    
+</body>
+</html>

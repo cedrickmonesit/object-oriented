@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>To Do List</title>
+    <script>
+        function createTask(){
+            list.createTask();
+        }
+        var list = new function(){
+            this.createTask = function(){
+                var task = document.listForm.inputTask.value;
+                console.log(task);
+                var element = document.createElement("input");
+                var name = document.createTextNode(task+":");
+                var type = element.setAttribute("type", "checkbox");
+                document.listForm.appendChild(name);
+                document.listForm.appendChild(element);
+            }
+        }
+    </script>
+</head>
+<body>  
+    <form name="listForm" >
+        <input type="text" name="inputTask"/>
+        <input type="button" value="Create" onclick="createTask()"/>
+    </form>
+</body>
+</html>
